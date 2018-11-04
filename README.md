@@ -27,6 +27,6 @@ sflast(url)
 
 本脚本需要讯飞开放平台的识图API
 
-appid和APIkey在讯飞开放平台"https://www.xfyun.cn/services/printed-word-recognition"获取
+appid和APIkey在讯飞开放平台获取"https://www.xfyun.cn/services/printed-word-recognition"
 
 appid和APIkey在88和89行配置
