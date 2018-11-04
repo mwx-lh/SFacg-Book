@@ -2,6 +2,8 @@
 # -*- coding: UTF-8 -*-
 #cookie为sfacg.com下'.SFCommunity'的值
 #url为sf文章链接
+#appid和APIkey在讯飞开放平台'https://www.xfyun.cn/services/printed-word-recognition'获取
+#appid和APIkey在88和89行配置
 import sys
 
 reload(sys) 
@@ -83,7 +85,9 @@ def sfvip(url,cookie):
     import requests
     import os
     from requests.cookies import RequestsCookieJar
-# encoding=utf8 
+    api_key = '你的APIkey'
+    x_appid = '你的appid'
+
     jar=RequestsCookieJar()
     jar.set('.SFCommunity',cookie,domain="sfacg.com",path='/')
     aa={'UserAgent':'User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0',
@@ -127,9 +131,7 @@ def sfvip(url,cookie):
     base64_image = base64.b64encode(file_content)
     body = urllib.urlencode({'image': base64_image})
     url = 'http://webapi.xfyun.cn/v1/service/v1/ocr/recognize_document'
-    api_key = '04899a747b0c2a9a8ab1001d75c9929e'
     param = {"engine_type": "recognize_document"}
-    x_appid = '5bdd2410'
     x_param = base64.b64encode(json.dumps(param).replace(' ', ''))
     x_time = int(int(round(time.time() * 1000)) / 1000)
     x_checksum = hashlib.md5(api_key + str(x_time) + x_param).hexdigest()
