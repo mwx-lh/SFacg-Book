@@ -1,15 +1,16 @@
 # SFacg-Book
-这是一个sf轻小说的python2爬虫
+这是一个sf轻小说的python爬虫
 
 ## 开始使用
-1.安装python2：在官网python.org下载（注意！是python2不是3！)
+ 1.安装python：在官网python.org下载(Python2或Python3皆可)
 
  2.运行pip install requests pillow
  
  3.在ini.py里配置.SFCommunit的cookie并保存
  
- 4.运行python sf.py
+ 4.如下载的是Python2运行python sf2.py
+ 如下载的是Python3运行sf3.py
  
 ## 注意事项
 
-1.这个在Windows下运行可能会有点问题,好像是编码的问题,我有空改一下编码,或者是改成Python3(期末考试了)
+1.Python2版本在Windows下运行可能会有点问题
