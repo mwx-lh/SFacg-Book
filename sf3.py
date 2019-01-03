@@ -196,6 +196,10 @@ def sfvip(url,cookie):
         return "获取图片超时"
     # 写入文件,采用二进制写入文件
     import os
+    try:
+        wjm=re.sub("\n", "", wjm, count=0, flags=0)
+    except:
+        ht=0
     wjj=os.path.exists('./sf')
     if wjj== False:
         os.makedirs("./sf") 
@@ -210,7 +214,7 @@ import ini
 cookie=ini.cookie()
 tj = "ww"
 url=input ("请输入SF文章链接:")
-
+"""
 try:
     while tj != "q":
         if tj == "r":
@@ -235,4 +239,4 @@ while tj != "q":
     if tj=="l":
         url=sflast(url)
 print ("\n当前url:"+url)
-"""
+
