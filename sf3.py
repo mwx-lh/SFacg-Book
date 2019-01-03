@@ -2,7 +2,7 @@
 
 def sfnext(url):
     import re,urllib
-    html=urllib.request.urlopen(url).read().decode()
+    html=urllib.request.urlopen(url).read().decode("utf-8")
     xyz1 =re.search('class="btn normal">下一章</a>', html, flags=0).span()
     xyz1=xyz1[0]
     xyz=html[:xyz1]
@@ -15,7 +15,7 @@ def sfnext(url):
     return xyz
 def sflast(url):
     import re,urllib
-    html=urllib.request.urlopen(urllib.request.Request(url)).read()
+    html=urllib.request.urlopen(urllib.request.Request(url)).read().decode("utf-8")
     syz1 = re.search('class="btn normal">上一章</a>', html, flags=0	).span()
     syz1=syz1[0]
     syz=html[:syz1]
@@ -36,8 +36,9 @@ def sf (url,cookie):
         ret=sfnv(url)
     return ret
 def sfnv(url):
-    import urllib,re
-    html=urllib.request.urlopen(url).read().decode()
+    import re
+    from urllib import request
+    html=request.urlopen(url).read().decode("utf-8")
     try:
         nr1 = re.search('<div class="article-hd">', html, flags=0).span()
         nr1 = nr1[1]
@@ -124,7 +125,7 @@ def sfvip(url,cookie):
         return "获取HTML超时"
     #print(request.text)
     html=request.text
-    htmlxx=urllib.request.urlopen(url).read().decode()
+    htmlxx=urllib.request.urlopen(url).read().decode("utf-8")
 
     #获取文章信息
     nr1 = re.search('<div class="article-hd">', htmlxx, flags=0).span()
@@ -209,7 +210,7 @@ import ini
 cookie=ini.cookie()
 tj = "ww"
 url=input ("请输入SF文章链接:")
-
+"""
 try:
     while tj != "q":
         if tj == "r":
@@ -223,7 +224,7 @@ try:
     print ("\n当前url:"+url)
 except:
     print ("\n当前url:"+url)
-    """
+"""
 while tj != "q":
     if tj == "r":
         url=input ("请输入SF文章链接:")
@@ -234,4 +235,3 @@ while tj != "q":
     if tj=="l":
         url=sflast(url)
 print ("\n当前url:"+url)
-"""
