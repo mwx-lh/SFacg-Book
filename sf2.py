@@ -189,6 +189,10 @@ def sfvip(url,cookie):
     picurl='http://book.sfacg.com/ajax/ashx/common.ashx'+html
     #os.system('mkdir ~/sf/')
     try:
+        wjm=re.sub("\n", "", wjm, count=0, flags=0)
+    except:
+        ht=0
+    try:
         html_str = requests.get(picurl,headers=aa,cookies = jar,timeout=20).content
     except:
         #print "超时"
