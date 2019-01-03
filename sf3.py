@@ -210,7 +210,7 @@ import ini
 cookie=ini.cookie()
 tj = "ww"
 url=input ("请输入SF文章链接:")
-"""
+
 try:
     while tj != "q":
         if tj == "r":
@@ -235,3 +235,4 @@ while tj != "q":
     if tj=="l":
         url=sflast(url)
 print ("\n当前url:"+url)
+"""
